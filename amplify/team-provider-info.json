@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lionslabamplify-dev-161744-authRole",
+      "UnauthRoleArn": "arn:aws:iam::672657698497:role/amplify-lionslabamplify-dev-161744-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::672657698497:role/amplify-lionslabamplify-dev-161744-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-lionslabamplify-dev-161744-deployment",
+      "UnauthRoleName": "amplify-lionslabamplify-dev-161744-unauthRole",
+      "StackName": "amplify-lionslabamplify-dev-161744",
+      "StackId": "arn:aws:cloudformation:us-east-1:672657698497:stack/amplify-lionslabamplify-dev-161744/66f96370-a605-11ec-868b-0ef913a177ab",
+      "AmplifyAppId": "dlc68zk9prplg"
+    }
+  }
+}

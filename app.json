@@ -1,17 +1,23 @@
 {
   "expo": {
-    "name": "project1",
+    "name": "LionsLab",
     "slug": "project1",
-    "version": "1.0.0",
+    "privacy": "public",
+    "version": "1.2.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/black-LIONSLAB.png",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "scheme": "myapp",
-    "userInterfaceStyle": "automatic",
+    "userInterfaceStyle": "dark",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./assets/images/black-LIONSLAB.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#000000"
     },
+ 
     "updates": {
       "fallbackToCacheTimeout": 0
     },
@@ -19,16 +25,30 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "be.lionswaterloofc.LionsLab",
+      "buildNumber": "1.2.0",
+      "supportsTablet": true,
+      "icon": "./assets/images/LogoLions.png"
+    
     },
     "android": {
+
+      "package": "be.lionswaterloofc.LionsLab",   
+      "versionCode" : 3,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/LogoLions.png",
         "backgroundColor": "#ffffff"
-      }
+        
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "WRITE_EXTERNAL_STORAGE"
+      ]
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
-    }
+    },
+    "description": ""
   }
 }

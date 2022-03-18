@@ -3,33 +3,52 @@
  * https://reactnavigation.org/docs/typescript/
  */
 
-import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
-import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-declare global {
-  namespace ReactNavigation {
-    interface RootParamList extends RootStackParamList {}
-  }
-}
+
 
 export type RootStackParamList = {
-  Root: NavigatorScreenParams<RootTabParamList> | undefined;
+  Root: undefined;
   Modal: undefined;
   NotFound: undefined;
 };
 
-export type RootStackScreenProps<Screen extends keyof RootStackParamList> = NativeStackScreenProps<
-  RootStackParamList,
-  Screen
->;
+export type BottomTabParamList = {
+  Home: undefined;
+  Coming_Soon: undefined;
+  Search: undefined;
+  Downloads: undefined;
+  Ranking: undefined;
+};
+
+export type HomeParamList = {
+  TabOneScreen: undefined;
+  MovieDetailsScreen: undefined;
+  TabThreeScreen: undefined;
+  TabFourScreen: undefined;
+  TabFiveScreen: undefined;
+  MediaScreen: undefined;
+  SplashScreen: undefined;
+};
+
+export type TabTwoParamList = {
+  TabTwoScreen: undefined;
+  TabThreeScreen: undefined;
+  TabFourScreen: undefined;
+};
+
+export type Episode = {
+  id: string,
+  title: string,
+  poster: string,
+  duration: string,
+  plot: string,
+  video: string,
+}
 
 export type RootTabParamList = {
   TabOne: undefined;
   TabTwo: undefined;
+  TabThree: undefined;
+  TabFour: undefined;
 };
 
-export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
-  BottomTabScreenProps<RootTabParamList, Screen>,
-  NativeStackScreenProps<RootStackParamList>
->;

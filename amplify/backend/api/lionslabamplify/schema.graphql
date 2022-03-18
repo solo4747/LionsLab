@@ -1,0 +1,138 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+
+type Team @model @auth
+
+(rules: 
+
+  [{ allow: private }]
+ 
+)
+
+{
+  id: ID! @primaryKey
+  name: String!
+
+
+  players: [Player]@hasMany(indexName: "byTeam", fields: ["id"])
+}
+
+
+type Player @model @auth(
+rules:
+ [
+  { allow: owner, provider: userPools},
+  { allow: public, provider: iam, operations:[read] }
+ ])
+ 
+@aws_iam @aws_cognito_user_pools {
+
+  id: ID! @primaryKey
+  name: String!
+  age: String!
+  pied: String
+  urlMedia: String
+  niveauActuel: Int
+  progressBar: Float
+  nombreDePointsActuel: Int
+  overflow : Int
+  poster: String
+  objectifs: [Objectif] @hasMany(indexName: "byPlayer", fields: ["id"])
+  medias: [Media] @hasMany(indexName: "byPlayer", fields: ["id"])
+  teamID: ID! @index(name: "byTeam")
+  type : String
+  login : String
+
+}
+
+type Mission @model @auth(
+rules:
+ [
+  { allow: owner, provider: userPools},
+  { allow: public, provider: iam, operations:[read] }
+ ])
+ 
+@aws_iam @aws_cognito_user_pools {
+
+  id: ID! @primaryKey
+  objectif: String!
+  name: String!
+  description: String
+  difficulte: Int
+  niveauActuel: Int
+  niveauMax: Int
+  progressBar: Float
+  playerID: String!
+  categorie: Int!
+  status : Boolean
+  type : String
+  afficherMission : Boolean
+  tasks: [Task] 
+}
+
+type Objectif @model @auth(
+rules:
+ [
+  { allow: owner, provider: userPools},
+  { allow: public, provider: iam, operations:[read] }
+ ])
+ 
+@aws_iam @aws_cognito_user_pools {
+  id: ID! @primaryKey
+  name: String!
+  description: String
+  difficulte: Int
+  niveauActuel: Int
+  niveauMax: Int
+  progressBar: Float
+  playerID: ID @index(name: "byPlayer") 
+  player: Player @belongsTo(fields: ["playerID"])
+  categorie: Int!
+  type : String
+  
+  tasks: [Task] @hasMany(indexName: "byObjectif", fields: ["id"])
+
+  
+}
+
+type Task @model @auth(
+rules:
+ [
+  { allow: owner, provider: userPools},
+  { allow: public, provider: iam, operations:[read] }
+ ])
+ 
+@aws_iam @aws_cognito_user_pools {
+  id: ID! @primaryKey
+  name: String!
+  status: Boolean
+  objectifID : ID! @index(name: "byObjectif")
+  objectif: Objectif @belongsTo(fields: ["objectifID"])
+  missionID : String
+  type : String
+  comment: Boolean
+  commentNote : String
+  description : String
+}
+
+
+type Media @model @auth(
+rules:
+ [
+  { allow: owner, provider: userPools},
+  { allow: public, provider: iam, operations:[read] }
+ ])
+ 
+@aws_iam @aws_cognito_user_pools {
+  id: ID! @primaryKey
+  uri: String!
+  status: Boolean
+  playerID: ID @index(name: "byPlayer") 
+  player: Player @belongsTo(fields: ["playerID"])
+  missionID : String
+  type : String
+  description : String
+  poster: String
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "lionslabamplify",
+    "serviceName": "AppSync",
+    "gqlSchemaPath": "C:\\Users\\Manu\\project1\\amplify\\backend\\api\\lionslabamplify\\schema.graphql",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authLionsLabAmplify"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2023-03-17T23:03:12.944Z",
+        "keyDescription": ""
+      },
+      {
+        "mode": "AWS_IAM"
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+je fais un components ESPACE.
+Ce component va etre appelé dans mon home screen. 
+Ce component contient une photo qui va representer l'ESPACE JOUEUR et l'ESPACE entraineur.
+Je reprends la structure d'un post airbnb.
+Je cree donc un component qui contient la photo et le nom de l'espace. J'appelle ce component dans la home page.
+
+-------------------------------------------------------------------------
+
+
+Pour ajouter un page à mon bottomTabNavigator je dois modifier les fichiers : 
+
+        types.tsx
+        ajouter un screen dans screens avec du code dans la page.
+        modifier le file navigation : index.tsx & LinkinkConfiguration
+
+----------------------------------------------------------------------------
+
+Dans le fichier "types" je définis tous mes ecrans dans la partie : BottomTabParamList
+
+----------------------------------------------------------------------------
+
+Photos AWS : https://s3.console.aws.amazon.com/s3/buckets/contencloudfront?region=us-east-1&tab=objects
+
+-----------------------------------------------------------------------------
+
+faire fonctionner la navigation sur toutes les pages.
+
+ajouter un point INFO à l'entrée qui reprend le concept de l'app.
+
+----------------------------------------------------------------------------
+
+sign in functionality = AWS Amplify
+
+fetch the data = GraphQl
+
+Storage with = AWS s3
+-------------------------------------------------------------------------
+
+je query tous les objectifs de ma BD et je les trie dans l'application. J'utilise donc 4 listes.
+update mon schema GRAPHQL et ajouter un champs "type" (technique , tactique, Mental, Physique) à mon model "OBJECTIF"
+
+ajouter du state , car quand je vais ajouter un objectif je veux que ça apparaisse directement dans ma liste de challenges.
+
+-------------------------------------------------------------------------
+
+console.log(obj[0].name)
+-------------------------------------------------------------------------
+
+Il faudrait que j arrive à extraire des données d AWS en les triant directement ! 
+continuer à chercher des tutos...parce que faire un retrait de toutes les taches c'est beucoup trop couteux pour l'appli.
+
+
+-------------------------------------------------------------------------
+
+patience : https://www.patiencefruitco.com/le-club-patience/patience-trucs-concrets/
+
+---------------------------------------------------------------------------
+
+au moment de ton update , ton champs VERSION doit etre egal à version + 1.
+Si version == 7 dans AWS. Ton insert doit etre envoyé avec VERSION == 8.
+
+
+
+-------------------------------------------------------------
+
+//    Animated.loop(
+        //   Animated.timing(spinAnim, {
+        //     toValue: 1,
+        //     duration: 2000,
+        //     easing: Easing.linear,
+        //     useNativeDriver: true,
+        //   }),
+        // ).start(); 
+
+        -------------------------------------------------------------------
+
+        <BottomTab.Screen
+        name="Coming_Soon"
+        component={TabTwoNavigator}
+        options={{ 
+          headerShown: false,
+          tabBarIcon: ({ color }) => <MaterialIcons name="video-library" size={24} color={color} 
+          
+          />,
+        }}
+      />
+
+      ----------------------------------------------------------------------------
+
+      const userData = await API.graphql(graphqlOperation(listMedia, {
+        filter: {
+            playerID: {eq: plr.id},
+        }
+    } ))
+
+    ------------------------------------------------------------
+
+    expo install react-native-svg@12.1.0
+    ---------------------------------------------------------
+    https://stackoverflow.com/questions/67130651/reanimated-2-failed-to-create-a-worklet-maybe-you-forgot-to-add-reanimateds-ba
