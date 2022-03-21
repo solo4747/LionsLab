@@ -569,7 +569,7 @@ interface PlayerInterface{
                                           </View>  
 
                                            <Dialog.Container visible={visible}>
-                                                      <Dialog.Title>Account delete</Dialog.Title>
+                                                      <Dialog.Title>Menu Objectif</Dialog.Title>
                                                       <Dialog.Description>
                                                        Es-tu bien certain de vouloir relever ce challenge ? 
                                                        En es-tu capable ?

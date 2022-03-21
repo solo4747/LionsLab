@@ -56,10 +56,11 @@ interface HomeTeamInterface{
           str += '.';
     
 
-          if (user == null ){}
+          
 
-          else if(user.username === 'firstusermanu' 
+          if(user.username === 'firstuser' 
              || user.username === 'stef' 
+             || user.username === 'seconduser'
              || user.username === 'bapt' 
              || user.username === 'owo' 
              || user.username === player.login && undefine)

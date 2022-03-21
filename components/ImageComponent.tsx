@@ -25,9 +25,22 @@ function pointConverter(params:number) {
    
     export default function ImageComponent({imageURI, description}) {
       
-     
+      if(imageURI == null || description == null) {
+        return (
+  
+             
+  
+          <View style={styles.loadingContainer}>
+            <Text style={styles.loadingText}>Media Conflict. Please refer to your Webmaster</Text>
+          </View>
+  
+  
+  
+        ) 
+        }
       
-    
+    else{
+
         return (
        
             <View style={styles.imageHolder}>
@@ -41,6 +54,10 @@ function pointConverter(params:number) {
           </View>
        
       );
+
+  }
+    
+      
     }
 
 
@@ -71,7 +88,15 @@ function pointConverter(params:number) {
           textOnImage: {
             color: 'white'
           },
-
+          loadingContainer: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center'
+          },
+          loadingText: {
+            paddingTop: 10,
+            fontSize: 18,
+          },
 
          
       });

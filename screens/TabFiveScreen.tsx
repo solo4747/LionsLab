@@ -140,12 +140,11 @@ export default function TabFiveScreen() {
                       // Ecriture vers la base de données
                     const updateCommentTask1 = await API.graphql(graphqlOperation( updateTask,  {input :{ id: task.id,  
                     comment: false,
-                    _version : task._version     
+                    // _version : task._version     
                                                                                       
                     }}));
 
-                    // console.log('/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
-                    // console.log(updateCommentTask1)
+                   
 
                     task._version += 1
                     setS(task)
@@ -209,7 +208,7 @@ export default function TabFiveScreen() {
             nombreDePointsActuel: p.nombreDePointsActuel,
             progressBar : p.progressBar,
             overflow : p.overflow,
-            _version : p._version                                                                           
+            // _version : p._version                                                                           
       }}));
     }
 
@@ -221,7 +220,7 @@ try{
       const updatetask = await API.graphql(graphqlOperation( updateTask,  {input :{ id: s.id,  
              status : s.status,
              missionID : miss.id,
-            _version : s._version                                                                           
+            // _version : s._version                                                                           
       }}));
     }                                                                                                                                           
   
@@ -233,7 +232,7 @@ try{
             niveauActuel: miss.niveauActuel,
             progressBar : miss.progressBar,
             status : miss.status,
-            _version : version
+            // _version : version
             
   }}))
 
@@ -260,8 +259,6 @@ const toggleModalVisibility = async () => {
 
  
   let index1 = tasks.indexOf(s)
-  console.log('INDEX')
-  console.log(index1)
   var tempTask = s
   tempTask.comment = true
   tempTask.commentNote = inputValue
@@ -276,10 +273,12 @@ const toggleModalVisibility = async () => {
     const updateCommentTask = await API.graphql(graphqlOperation( updateTask,  {input :{ id: s.id,  
           comment: true,
           commentNote: s.commentNote,
-          _version : s._version                                                                             
+          // _version : s._version 
+          
+          
     }}));
 
-
+    console.log('Commentaire ajouté')
   }
 
 

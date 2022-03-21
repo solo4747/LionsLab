@@ -7,7 +7,7 @@ import { Playback } from 'expo-av/build/AV';
 import { useRef, useState } from 'react';
 
 
-export default function VideoPlayer({lien}) {
+export default function VideoPlayer({lien, commentaire}) {
     
     // const { compil } = props;
     const video = useRef(null);
@@ -28,7 +28,7 @@ export default function VideoPlayer({lien}) {
             resizeMode="contain"
             onPlaybackStatusUpdate={status => setStatus(() => status)} />
             
-            <Text style={[styles.text, { alignSelf:'center', fontSize: 12, color: "#DFD8C8", textTransform: "uppercase" }]}>Media</Text>
+            <Text style={[styles.text, { alignSelf:'center', fontSize: 12, color: "#DFD8C8", textTransform: "uppercase" }]}>{commentaire}</Text>
             
             </View>
 

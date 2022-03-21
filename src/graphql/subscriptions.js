@@ -23,7 +23,6 @@ export const onCreateTeam = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -54,7 +53,6 @@ export const onUpdateTeam = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -85,7 +83,6 @@ export const onDeleteTeam = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -95,8 +92,8 @@ export const onDeleteTeam = /* GraphQL */ `
   }
 `;
 export const onCreatePlayer = /* GraphQL */ `
-  subscription OnCreatePlayer($owner: String) {
-    onCreatePlayer(owner: $owner) {
+  subscription OnCreatePlayer {
+    onCreatePlayer {
       id
       name
       age
@@ -121,7 +118,6 @@ export const onCreatePlayer = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -135,9 +131,9 @@ export const onCreatePlayer = /* GraphQL */ `
           type
           description
           poster
+          tag
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -146,13 +142,12 @@ export const onCreatePlayer = /* GraphQL */ `
       login
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdatePlayer = /* GraphQL */ `
-  subscription OnUpdatePlayer($owner: String) {
-    onUpdatePlayer(owner: $owner) {
+  subscription OnUpdatePlayer {
+    onUpdatePlayer {
       id
       name
       age
@@ -177,7 +172,6 @@ export const onUpdatePlayer = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -191,9 +185,9 @@ export const onUpdatePlayer = /* GraphQL */ `
           type
           description
           poster
+          tag
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -202,13 +196,12 @@ export const onUpdatePlayer = /* GraphQL */ `
       login
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeletePlayer = /* GraphQL */ `
-  subscription OnDeletePlayer($owner: String) {
-    onDeletePlayer(owner: $owner) {
+  subscription OnDeletePlayer {
+    onDeletePlayer {
       id
       name
       age
@@ -233,7 +226,6 @@ export const onDeletePlayer = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -247,9 +239,9 @@ export const onDeletePlayer = /* GraphQL */ `
           type
           description
           poster
+          tag
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -258,13 +250,12 @@ export const onDeletePlayer = /* GraphQL */ `
       login
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onCreateMission = /* GraphQL */ `
-  subscription OnCreateMission($owner: String) {
-    onCreateMission(owner: $owner) {
+  subscription OnCreateMission {
+    onCreateMission {
       id
       objectif
       name
@@ -296,7 +287,6 @@ export const onCreateMission = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          owner
         }
         missionID
         type
@@ -305,17 +295,15 @@ export const onCreateMission = /* GraphQL */ `
         description
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateMission = /* GraphQL */ `
-  subscription OnUpdateMission($owner: String) {
-    onUpdateMission(owner: $owner) {
+  subscription OnUpdateMission {
+    onUpdateMission {
       id
       objectif
       name
@@ -347,7 +335,6 @@ export const onUpdateMission = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          owner
         }
         missionID
         type
@@ -356,17 +343,15 @@ export const onUpdateMission = /* GraphQL */ `
         description
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteMission = /* GraphQL */ `
-  subscription OnDeleteMission($owner: String) {
-    onDeleteMission(owner: $owner) {
+  subscription OnDeleteMission {
+    onDeleteMission {
       id
       objectif
       name
@@ -398,7 +383,6 @@ export const onDeleteMission = /* GraphQL */ `
           type
           createdAt
           updatedAt
-          owner
         }
         missionID
         type
@@ -407,17 +391,15 @@ export const onDeleteMission = /* GraphQL */ `
         description
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onCreateObjectif = /* GraphQL */ `
-  subscription OnCreateObjectif($owner: String) {
-    onCreateObjectif(owner: $owner) {
+  subscription OnCreateObjectif {
+    onCreateObjectif {
       id
       name
       description
@@ -448,7 +430,6 @@ export const onCreateObjectif = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       categorie
       type
@@ -465,19 +446,17 @@ export const onCreateObjectif = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateObjectif = /* GraphQL */ `
-  subscription OnUpdateObjectif($owner: String) {
-    onUpdateObjectif(owner: $owner) {
+  subscription OnUpdateObjectif {
+    onUpdateObjectif {
       id
       name
       description
@@ -508,7 +487,6 @@ export const onUpdateObjectif = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       categorie
       type
@@ -525,19 +503,17 @@ export const onUpdateObjectif = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteObjectif = /* GraphQL */ `
-  subscription OnDeleteObjectif($owner: String) {
-    onDeleteObjectif(owner: $owner) {
+  subscription OnDeleteObjectif {
+    onDeleteObjectif {
       id
       name
       description
@@ -568,7 +544,6 @@ export const onDeleteObjectif = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       categorie
       type
@@ -585,19 +560,17 @@ export const onDeleteObjectif = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onCreateTask = /* GraphQL */ `
-  subscription OnCreateTask($owner: String) {
-    onCreateTask(owner: $owner) {
+  subscription OnCreateTask {
+    onCreateTask {
       id
       name
       status
@@ -627,7 +600,6 @@ export const onCreateTask = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         categorie
         type
@@ -636,7 +608,6 @@ export const onCreateTask = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
@@ -645,13 +616,12 @@ export const onCreateTask = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateTask = /* GraphQL */ `
-  subscription OnUpdateTask($owner: String) {
-    onUpdateTask(owner: $owner) {
+  subscription OnUpdateTask {
+    onUpdateTask {
       id
       name
       status
@@ -681,7 +651,6 @@ export const onUpdateTask = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         categorie
         type
@@ -690,7 +659,6 @@ export const onUpdateTask = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
@@ -699,13 +667,12 @@ export const onUpdateTask = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteTask = /* GraphQL */ `
-  subscription OnDeleteTask($owner: String) {
-    onDeleteTask(owner: $owner) {
+  subscription OnDeleteTask {
+    onDeleteTask {
       id
       name
       status
@@ -735,7 +702,6 @@ export const onDeleteTask = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         categorie
         type
@@ -744,7 +710,6 @@ export const onDeleteTask = /* GraphQL */ `
         }
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
@@ -753,13 +718,12 @@ export const onDeleteTask = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onCreateMedia = /* GraphQL */ `
-  subscription OnCreateMedia($owner: String) {
-    onCreateMedia(owner: $owner) {
+  subscription OnCreateMedia {
+    onCreateMedia {
       id
       uri
       status
@@ -786,21 +750,20 @@ export const onCreateMedia = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
       description
       poster
+      tag
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onUpdateMedia = /* GraphQL */ `
-  subscription OnUpdateMedia($owner: String) {
-    onUpdateMedia(owner: $owner) {
+  subscription OnUpdateMedia {
+    onUpdateMedia {
       id
       uri
       status
@@ -827,21 +790,20 @@ export const onUpdateMedia = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
       description
       poster
+      tag
       createdAt
       updatedAt
-      owner
     }
   }
 `;
 export const onDeleteMedia = /* GraphQL */ `
-  subscription OnDeleteMedia($owner: String) {
-    onDeleteMedia(owner: $owner) {
+  subscription OnDeleteMedia {
+    onDeleteMedia {
       id
       uri
       status
@@ -868,15 +830,14 @@ export const onDeleteMedia = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
       description
       poster
+      tag
       createdAt
       updatedAt
-      owner
     }
   }
 `;

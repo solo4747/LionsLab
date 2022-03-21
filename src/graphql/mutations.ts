@@ -48,7 +48,6 @@ export const createTeam = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               categorie
               type
@@ -57,7 +56,6 @@ export const createTeam = /* GraphQL */ `
               }
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -83,15 +81,14 @@ export const createTeam = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
               description
               poster
+              tag
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -100,7 +97,6 @@ export const createTeam = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -155,7 +151,6 @@ export const updateTeam = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               categorie
               type
@@ -164,7 +159,6 @@ export const updateTeam = /* GraphQL */ `
               }
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -190,15 +184,14 @@ export const updateTeam = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
               description
               poster
+              tag
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -207,7 +200,6 @@ export const updateTeam = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -262,7 +254,6 @@ export const deleteTeam = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               categorie
               type
@@ -271,7 +262,6 @@ export const deleteTeam = /* GraphQL */ `
               }
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -297,15 +287,14 @@ export const deleteTeam = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
               description
               poster
+              tag
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -314,7 +303,6 @@ export const deleteTeam = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -374,7 +362,6 @@ export const createPlayer = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -388,9 +375,9 @@ export const createPlayer = /* GraphQL */ `
                 type
                 description
                 poster
+                tag
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -399,7 +386,6 @@ export const createPlayer = /* GraphQL */ `
             login
             createdAt
             updatedAt
-            owner
           }
           categorie
           type
@@ -422,7 +408,6 @@ export const createPlayer = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
@@ -431,13 +416,11 @@ export const createPlayer = /* GraphQL */ `
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -472,7 +455,6 @@ export const createPlayer = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -486,9 +468,9 @@ export const createPlayer = /* GraphQL */ `
                 type
                 description
                 poster
+                tag
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -497,15 +479,14 @@ export const createPlayer = /* GraphQL */ `
             login
             createdAt
             updatedAt
-            owner
           }
           missionID
           type
           description
           poster
+          tag
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -514,7 +495,6 @@ export const createPlayer = /* GraphQL */ `
       login
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -569,7 +549,6 @@ export const updatePlayer = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -583,9 +562,9 @@ export const updatePlayer = /* GraphQL */ `
                 type
                 description
                 poster
+                tag
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -594,7 +573,6 @@ export const updatePlayer = /* GraphQL */ `
             login
             createdAt
             updatedAt
-            owner
           }
           categorie
           type
@@ -617,7 +595,6 @@ export const updatePlayer = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
@@ -626,13 +603,11 @@ export const updatePlayer = /* GraphQL */ `
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -667,7 +642,6 @@ export const updatePlayer = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -681,9 +655,9 @@ export const updatePlayer = /* GraphQL */ `
                 type
                 description
                 poster
+                tag
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -692,15 +666,14 @@ export const updatePlayer = /* GraphQL */ `
             login
             createdAt
             updatedAt
-            owner
           }
           missionID
           type
           description
           poster
+          tag
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -709,7 +682,6 @@ export const updatePlayer = /* GraphQL */ `
       login
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -764,7 +736,6 @@ export const deletePlayer = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -778,9 +749,9 @@ export const deletePlayer = /* GraphQL */ `
                 type
                 description
                 poster
+                tag
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -789,7 +760,6 @@ export const deletePlayer = /* GraphQL */ `
             login
             createdAt
             updatedAt
-            owner
           }
           categorie
           type
@@ -812,7 +782,6 @@ export const deletePlayer = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
@@ -821,13 +790,11 @@ export const deletePlayer = /* GraphQL */ `
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -862,7 +829,6 @@ export const deletePlayer = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -876,9 +842,9 @@ export const deletePlayer = /* GraphQL */ `
                 type
                 description
                 poster
+                tag
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -887,15 +853,14 @@ export const deletePlayer = /* GraphQL */ `
             login
             createdAt
             updatedAt
-            owner
           }
           missionID
           type
           description
           poster
+          tag
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
@@ -904,7 +869,6 @@ export const deletePlayer = /* GraphQL */ `
       login
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -966,7 +930,6 @@ export const createMission = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -980,9 +943,9 @@ export const createMission = /* GraphQL */ `
                 type
                 description
                 poster
+                tag
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -991,7 +954,6 @@ export const createMission = /* GraphQL */ `
             login
             createdAt
             updatedAt
-            owner
           }
           categorie
           type
@@ -1014,7 +976,6 @@ export const createMission = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
@@ -1023,13 +984,11 @@ export const createMission = /* GraphQL */ `
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
         missionID
         type
@@ -1038,11 +997,9 @@ export const createMission = /* GraphQL */ `
         description
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -1104,7 +1061,6 @@ export const updateMission = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -1118,9 +1074,9 @@ export const updateMission = /* GraphQL */ `
                 type
                 description
                 poster
+                tag
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -1129,7 +1085,6 @@ export const updateMission = /* GraphQL */ `
             login
             createdAt
             updatedAt
-            owner
           }
           categorie
           type
@@ -1152,7 +1107,6 @@ export const updateMission = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
@@ -1161,13 +1115,11 @@ export const updateMission = /* GraphQL */ `
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
         missionID
         type
@@ -1176,11 +1128,9 @@ export const updateMission = /* GraphQL */ `
         description
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -1242,7 +1192,6 @@ export const deleteMission = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -1256,9 +1205,9 @@ export const deleteMission = /* GraphQL */ `
                 type
                 description
                 poster
+                tag
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
@@ -1267,7 +1216,6 @@ export const deleteMission = /* GraphQL */ `
             login
             createdAt
             updatedAt
-            owner
           }
           categorie
           type
@@ -1290,7 +1238,6 @@ export const deleteMission = /* GraphQL */ `
                 type
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
@@ -1299,13 +1246,11 @@ export const deleteMission = /* GraphQL */ `
               description
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
           createdAt
           updatedAt
-          owner
         }
         missionID
         type
@@ -1314,11 +1259,9 @@ export const deleteMission = /* GraphQL */ `
         description
         createdAt
         updatedAt
-        owner
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -1379,7 +1322,6 @@ export const createObjectif = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             categorie
             type
@@ -1396,13 +1338,11 @@ export const createObjectif = /* GraphQL */ `
                 description
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -1434,15 +1374,14 @@ export const createObjectif = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             missionID
             type
             description
             poster
+            tag
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -1451,7 +1390,6 @@ export const createObjectif = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       categorie
       type
@@ -1492,7 +1430,6 @@ export const createObjectif = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             categorie
             type
@@ -1509,13 +1446,11 @@ export const createObjectif = /* GraphQL */ `
                 description
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
             createdAt
             updatedAt
-            owner
           }
           missionID
           type
@@ -1524,13 +1459,11 @@ export const createObjectif = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -1591,7 +1524,6 @@ export const updateObjectif = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             categorie
             type
@@ -1608,13 +1540,11 @@ export const updateObjectif = /* GraphQL */ `
                 description
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -1646,15 +1576,14 @@ export const updateObjectif = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             missionID
             type
             description
             poster
+            tag
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -1663,7 +1592,6 @@ export const updateObjectif = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       categorie
       type
@@ -1704,7 +1632,6 @@ export const updateObjectif = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             categorie
             type
@@ -1721,13 +1648,11 @@ export const updateObjectif = /* GraphQL */ `
                 description
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
             createdAt
             updatedAt
-            owner
           }
           missionID
           type
@@ -1736,13 +1661,11 @@ export const updateObjectif = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -1803,7 +1726,6 @@ export const deleteObjectif = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             categorie
             type
@@ -1820,13 +1742,11 @@ export const deleteObjectif = /* GraphQL */ `
                 description
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -1858,15 +1778,14 @@ export const deleteObjectif = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             missionID
             type
             description
             poster
+            tag
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -1875,7 +1794,6 @@ export const deleteObjectif = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       categorie
       type
@@ -1916,7 +1834,6 @@ export const deleteObjectif = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             categorie
             type
@@ -1933,13 +1850,11 @@ export const deleteObjectif = /* GraphQL */ `
                 description
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
             createdAt
             updatedAt
-            owner
           }
           missionID
           type
@@ -1948,13 +1863,11 @@ export const deleteObjectif = /* GraphQL */ `
           description
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -2014,7 +1927,6 @@ export const createTask = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               categorie
               type
@@ -2023,7 +1935,6 @@ export const createTask = /* GraphQL */ `
               }
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2049,15 +1960,14 @@ export const createTask = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
               description
               poster
+              tag
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2066,7 +1976,6 @@ export const createTask = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         categorie
         type
@@ -2101,7 +2010,6 @@ export const createTask = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               categorie
               type
@@ -2110,7 +2018,6 @@ export const createTask = /* GraphQL */ `
               }
               createdAt
               updatedAt
-              owner
             }
             missionID
             type
@@ -2119,13 +2026,11 @@ export const createTask = /* GraphQL */ `
             description
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
@@ -2134,7 +2039,6 @@ export const createTask = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -2194,7 +2098,6 @@ export const updateTask = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               categorie
               type
@@ -2203,7 +2106,6 @@ export const updateTask = /* GraphQL */ `
               }
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2229,15 +2131,14 @@ export const updateTask = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
               description
               poster
+              tag
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2246,7 +2147,6 @@ export const updateTask = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         categorie
         type
@@ -2281,7 +2181,6 @@ export const updateTask = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               categorie
               type
@@ -2290,7 +2189,6 @@ export const updateTask = /* GraphQL */ `
               }
               createdAt
               updatedAt
-              owner
             }
             missionID
             type
@@ -2299,13 +2197,11 @@ export const updateTask = /* GraphQL */ `
             description
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
@@ -2314,7 +2210,6 @@ export const updateTask = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -2374,7 +2269,6 @@ export const deleteTask = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               categorie
               type
@@ -2383,7 +2277,6 @@ export const deleteTask = /* GraphQL */ `
               }
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2409,15 +2302,14 @@ export const deleteTask = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               missionID
               type
               description
               poster
+              tag
               createdAt
               updatedAt
-              owner
             }
             nextToken
           }
@@ -2426,7 +2318,6 @@ export const deleteTask = /* GraphQL */ `
           login
           createdAt
           updatedAt
-          owner
         }
         categorie
         type
@@ -2461,7 +2352,6 @@ export const deleteTask = /* GraphQL */ `
                 login
                 createdAt
                 updatedAt
-                owner
               }
               categorie
               type
@@ -2470,7 +2360,6 @@ export const deleteTask = /* GraphQL */ `
               }
               createdAt
               updatedAt
-              owner
             }
             missionID
             type
@@ -2479,13 +2368,11 @@ export const deleteTask = /* GraphQL */ `
             description
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
@@ -2494,7 +2381,6 @@ export const deleteTask = /* GraphQL */ `
       description
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -2551,7 +2437,6 @@ export const createMedia = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             categorie
             type
@@ -2568,13 +2453,11 @@ export const createMedia = /* GraphQL */ `
                 description
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2606,15 +2489,14 @@ export const createMedia = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             missionID
             type
             description
             poster
+            tag
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2623,15 +2505,14 @@ export const createMedia = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
       description
       poster
+      tag
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -2688,7 +2569,6 @@ export const updateMedia = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             categorie
             type
@@ -2705,13 +2585,11 @@ export const updateMedia = /* GraphQL */ `
                 description
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2743,15 +2621,14 @@ export const updateMedia = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             missionID
             type
             description
             poster
+            tag
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2760,15 +2637,14 @@ export const updateMedia = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
       description
       poster
+      tag
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -2825,7 +2701,6 @@ export const deleteMedia = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             categorie
             type
@@ -2842,13 +2717,11 @@ export const deleteMedia = /* GraphQL */ `
                 description
                 createdAt
                 updatedAt
-                owner
               }
               nextToken
             }
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2880,15 +2753,14 @@ export const deleteMedia = /* GraphQL */ `
               login
               createdAt
               updatedAt
-              owner
             }
             missionID
             type
             description
             poster
+            tag
             createdAt
             updatedAt
-            owner
           }
           nextToken
         }
@@ -2897,15 +2769,14 @@ export const deleteMedia = /* GraphQL */ `
         login
         createdAt
         updatedAt
-        owner
       }
       missionID
       type
       description
       poster
+      tag
       createdAt
       updatedAt
-      owner
     }
   }
 `;

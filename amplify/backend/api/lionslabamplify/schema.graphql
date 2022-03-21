@@ -20,14 +20,16 @@ type Team @model @auth
 }
 
 
-type Player @model @auth(
-rules:
- [
-  { allow: owner, provider: userPools},
-  { allow: public, provider: iam, operations:[read] }
- ])
+type Player @model @auth
+
+(rules: 
+
+  [{ allow: private }]
  
-@aws_iam @aws_cognito_user_pools {
+)
+
+
+ {
 
   id: ID! @primaryKey
   name: String!
@@ -47,14 +49,15 @@ rules:
 
 }
 
-type Mission @model @auth(
-rules:
- [
-  { allow: owner, provider: userPools},
-  { allow: public, provider: iam, operations:[read] }
- ])
+type Mission @model @auth
+
+(rules: 
+
+  [{ allow: private }]
  
-@aws_iam @aws_cognito_user_pools {
+) 
+
+{
 
   id: ID! @primaryKey
   objectif: String!
@@ -72,14 +75,15 @@ rules:
   tasks: [Task] 
 }
 
-type Objectif @model @auth(
-rules:
- [
-  { allow: owner, provider: userPools},
-  { allow: public, provider: iam, operations:[read] }
- ])
+type Objectif @model @auth
+
+(rules: 
+
+  [{ allow: private }]
  
-@aws_iam @aws_cognito_user_pools {
+) 
+
+{
   id: ID! @primaryKey
   name: String!
   description: String
@@ -97,14 +101,15 @@ rules:
   
 }
 
-type Task @model @auth(
-rules:
- [
-  { allow: owner, provider: userPools},
-  { allow: public, provider: iam, operations:[read] }
- ])
+type Task @model @auth
+
+(rules: 
+
+  [{ allow: private }]
  
-@aws_iam @aws_cognito_user_pools {
+) 
+
+ {
   id: ID! @primaryKey
   name: String!
   status: Boolean
@@ -118,14 +123,15 @@ rules:
 }
 
 
-type Media @model @auth(
-rules:
- [
-  { allow: owner, provider: userPools},
-  { allow: public, provider: iam, operations:[read] }
- ])
+type Media @model @auth
+(rules: 
+
+  [{ allow: private }]
  
-@aws_iam @aws_cognito_user_pools {
+) 
+
+
+ {
   id: ID! @primaryKey
   uri: String!
   status: Boolean
@@ -135,4 +141,5 @@ rules:
   type : String
   description : String
   poster: String
+  tag : String
 }

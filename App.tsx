@@ -68,10 +68,8 @@ function App() {
         {/* Navigation component , contient les différents tabs que contient mon app. */}
         <Navigation colorScheme={colorScheme} />
 
-        <StatusBar />
-
+  
         <FlashMessage position="bottom" />
-
       </SafeAreaProvider>
     );
   }
