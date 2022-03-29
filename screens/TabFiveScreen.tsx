@@ -89,13 +89,16 @@ export default function TabFiveScreen() {
        setS(task)
 
       if(!task.status){
-            setVisible(true);  //Cloturer cette tache ?
+            setVisible(true);  //CLOTURER | COMMENTAIRE | ANNULER ?
             
       }else{
         setVisib(true)   // Tu as deja cloturé cette tache.
       }         
      
-            }   
+            }
+            
+            
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
             const handleCommentaire = () => {
 
@@ -133,11 +136,11 @@ export default function TabFiveScreen() {
                       let index1 = tasks.indexOf(task)
                       console.log('INDEX')
                       console.log(index1)
-                      task.comment = false // Le commentaire a été lu donc statut passe à false qui siginfie "LU"
-                      setComments(true) // L'application nous remet possible l'ajout de commentaire pour cette tache ci!  
+                      task.comment = false // Le commentaire a été lu donc task.comment passe à false
+                      setComments(true) // Changement d'affichage au niveau du UI.   
                      
     
-                      // Ecriture vers la base de données
+                      // Ecriture vers la base de données du comment qui passe à false
                     const updateCommentTask1 = await API.graphql(graphqlOperation( updateTask,  {input :{ id: task.id,  
                     comment: false,
                     // _version : task._version     
@@ -148,19 +151,14 @@ export default function TabFiveScreen() {
 
                     task._version += 1
                     setS(task)
-                    // list[index] = s
-                    // tasks[index1] = s
+            
                     tasks.splice(index1,s)
-                    // console.log('/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////')
-                    // console.log(s)
+           
                        
-                    Alert.alert(
-                      "",
-                      task.commentNote,
-                      [
-                      { text: "OK Coach", onPress: () => {} }
-                      ]
-                    );
+                    Alert.alert( 
+                      "", 
+                      task.commentNote, 
+                      [ { text: "OK Coach", onPress: () => {} } ] );
 
             }
             
@@ -184,9 +182,8 @@ export default function TabFiveScreen() {
 
               setTimeout(() => setModalOpen(true), Platform.OS === "ios" ? 1000 : 0)
               setNavigHomeScreen1(true)
-              setClotureTache(true)  // L'option cloturer une tache est choisie au lieu de COMMENTAIRE ou CANCEL
-              
-              
+              setClotureTache(true)  // L'option cloturer une tache est choisie. Servira de filtre dans la fonction ci-dessous.
+                                    // La verification comme quoi il n'y a pas de commentaire en attente a été faite.
             }
          
             
@@ -213,7 +210,7 @@ export default function TabFiveScreen() {
     }
 
 
-  catch (e){console.log(e.message)}
+  catch (e){console.log('echec update player')}
 
 
 try{
@@ -224,7 +221,7 @@ try{
       }}));
     }                                                                                                                                           
   
-    catch (e){console.log(e.message)}
+    catch (e){console.log('echec update task')}
       
 try{
     
@@ -236,10 +233,10 @@ try{
             
   }}))
 
-  setMission(updatemission)
+  // setMission(updatemission)
 }                                                                                                                                           
  
-catch (e){console.log('echec')}
+catch (e){console.log('echec update mission')}
 
 
            };
@@ -257,13 +254,13 @@ catch (e){console.log('echec')}
 const toggleModalVisibility = async () => {
 
 
- 
+  // setModalOpen(false)
   let index1 = tasks.indexOf(s)
   var tempTask = s
   tempTask.comment = true
   tempTask.commentNote = inputValue
-  tempTask._version += 1
-  setS(tempTask)
+  // tempTask._version += 1
+  // setS(tempTask)
 
 
   
@@ -284,7 +281,7 @@ const toggleModalVisibility = async () => {
 
 catch (e){console.log('echec')}
   
-  tempTask._version += 1 
+  // tempTask._version += 1 
   setS(tempTask)
 
   tasks.splice(index1,s)
@@ -307,9 +304,12 @@ catch (e){console.log('echec')}
 
     <View style={styles.container}>
 
-<Modal visible={modalVisible} animationType='fade'  
-                                                        presentationStyle="overFullScreen" 
-                                                        > 
+{/* ///////////////////////////////////////////////////////////// */}
+                {/* MODAL POUR L AJOUT D UN COMMENTAIRE */}
+{/* ///////////////////////////////////////////////////////////////// */}
+
+
+<Modal visible={modalVisible} animationType='fade'  presentationStyle="overFullScreen"> 
 
                                                                                 
                                                                                           
@@ -331,10 +331,6 @@ catch (e){console.log('echec')}
 <Modal visible={modalOpen} animationType='slide'>
 
                 
-        
-
-               {/* <Text style={styles.text}>Enter your access code</Text>   */}
-                
                         <View style={styles.container1}>
                           
                         <Text style={styles.text}>Enter your access code</Text>  
@@ -349,19 +345,22 @@ catch (e){console.log('echec')}
                                               let a =  list.indexOf(s)
                                            
 
-
-                                                // Si true ça veut dire :  possibilité d'ajouter un commentaire.
+                                          //Soit tu viens pour une tache Soit tu viens pour un commentaire
+                                          // comments == true signifie : Pas de commentaire en attente. 
+                                          // clotureTache == False -> a choisi d'ajouter un commentaire dc clotureTache reste sur false
+                                          // Conditions remplies donc possibilité d'ajouter un commentaire
                                                 if(comments && !clotureTache) {
                                                   
-                                                   setModalVisible(true) // ouvrir la modal pour ajouter un commentaire.
+                                                   setModalVisible(true) // ouvre la modal d'ajout d'un commentaire ici au dessus.
                                                   
                                                 }    //IF 
 
 
                                                 
-                                                    //j'englobe le reste du code dans un ELSE
-                                                    // ce code s'execute si j'ai selectionné de VOULOIR CLOTURER UNE TACHE
-                                                  else if(clotureTache){
+                                       
+                                                    //ce code s'execute si j'ai selectionné de VOULOIR CLOTURER UNE TACHE
+                                                     
+                                                else  {
 
                                          
                                               // Je change le statut de la tache que je suis en train de manipuler à "TRUE" pour la cloturer
@@ -378,7 +377,7 @@ catch (e){console.log('echec')}
                                                   // Si oui : result = true et l'utilisateur reçoit un message de felicitations. 
 
 
-                                                    // DANS CE PREMIER CAS TOUTES LES TACHES NE SONT PAS TOUTES CLOTUREES
+                                                    // DANS CE PREMIER CAS TOUTES LES TACHES NE SONT PAS CLOTUREES
                                                     if (!result){
                                                  
                                                       let objBis = obj
@@ -509,28 +508,32 @@ catch (e){console.log('echec')}
                                               //  if(missBis.niveauActuel > c){missBis._version += 1}//Check nécessaire à l'update des points de la mission.
                                                    
                                               setMission(missBis)   //Set mission State
-                                              console.log(miss.niveauActuel)
+                                     
 
                                               save(p, miss, s, obj)  // Fonction Save vers le backend
                                               setComments(false)
                                               setValue('') // Reset du mot de passe rentré par l'utilisateur
                                               setModalOpen(false) // Fermeture de la Modal
-                                              // {navigation.navigate('TabThreeScreen')}    
+                                                   
                                                     
                                             }
+
+
+                                            //ELSE AU CAS OU CODE RENTRE PAR LE COACH EST ERRONE
                                             else{
                                                     
                                                     setValue('')
                                                     setModalOpen(false)
                                                     Alert.alert('Code erronné.')
-                                            }
+                                            } 
+                                            //ELSE AU CAS OU CODE RENTRE PAR LE COACH EST ERRONE
                                                                   
-                                            pbis._version += 1
+                                           
                              
                                             setP(pbis)
-                                            if(navigHomeScreen1 || navigHomeScreen){
-                                            {navigation.navigate('TabThreeScreen')}
-                                            }
+                                            // if(navigHomeScreen1 || navigHomeScreen){
+                                            // {navigation.navigate('TabThreeScreen')}
+                                            // }
 
                                            
                                      }}/>

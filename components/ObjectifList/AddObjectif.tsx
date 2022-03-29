@@ -13,6 +13,7 @@ import { Player } from '../../src/models';
 import Challenges from '../Challenges';
 import { useNavigation } from '@react-navigation/native';
 import { createMission, createTask, updatePlayer } from '../../src/graphql/mutations';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 interface ObjectifInterface{  
   
@@ -200,11 +201,11 @@ interface PlayerInterface{
         <View style={styles.container}>
 
                 <Modal visible={modalOpen} animationType='slide'>
-                        <View style={styles.container}>
+                        <SafeAreaView style={styles.container}>
                                 <MaterialIcons 
                                     name='close'
-                                    size={35} 
-                                    style={{marginBottom: 10 }}
+                                    size={30} 
+                                    style={{marginBottom: 10, marginLeft:10 }}
                                     color={'white'}
                                     onPress={() => annuler1()} 
                                 />
@@ -304,7 +305,7 @@ interface PlayerInterface{
 
                            
                                     <TouchableOpacity onPress={terminate} disabled={isAvailable}>
-                                          <Text style={{fontSize:25,alignSelf:'center', marginBottom:25}}> {isAvailable ? 'Valider tes 2 objectifs' : "Valider ta selection"}</Text>
+                                          <Text style={{fontSize:25,alignSelf:'center', marginBottom:25}}> {isAvailable ? 'Selectionne tes 2 objectifs' : "Cloture ta selection"}</Text>
                                     </TouchableOpacity>
 
                                     <TouchableOpacity onPress={annuler}>
@@ -313,7 +314,7 @@ interface PlayerInterface{
 
                        
                             
-                       </View>
+                       </SafeAreaView>
                 </Modal> 
 
             
@@ -442,7 +443,7 @@ interface PlayerInterface{
 
                          
                                   <TouchableOpacity onPress={terminate} disabled={isAvailable}>
-                                        <Text style={{fontSize:25,alignSelf:'center', marginBottom:25}}> {isAvailable ? 'Choisis 2 objectifs' : "Annule ta selection"}</Text>
+                                        <Text style={{fontSize:25,alignSelf:'center', marginBottom:25}}> {isAvailable ? 'Selectionne tes 2 objectifs' : "Cloture ta selection"}</Text>
                                   </TouchableOpacity>
 
                                   <TouchableOpacity onPress={annuler}>
@@ -582,7 +583,7 @@ interface PlayerInterface{
 
                          
                                   <TouchableOpacity onPress={terminate} disabled={isAvailable}>
-                                        <Text style={{fontSize:25,alignSelf:'center', marginBottom:25}}> {isAvailable ? 'Choisis 2 objectifs' : "Annule ta selection"}</Text>
+                                        <Text style={{fontSize:25,alignSelf:'center', marginBottom:25}}> {isAvailable ? 'Selectionne tes 2 objectifs' : "Cloture ta selection"}</Text>
                                   </TouchableOpacity>
 
                                   <TouchableOpacity onPress={annuler}>
@@ -626,6 +627,7 @@ interface PlayerInterface{
             
         container: {
             flex: 1,
+            backgroundColor:'black'
           
           },
 

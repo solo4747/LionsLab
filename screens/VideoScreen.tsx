@@ -64,7 +64,7 @@ else{
                                         data={vids}
                                         
                                         keyExtractor={item => item.id}
-                                        renderItem={({ item }) => <VideoPlayer lien={item.uri} commentaire={item.description} />}
+                                        renderItem={({ item }) => <VideoPlayer lien={item.uri} commentaire={item.description} tag={item.tag}  />}
                                         horizontal
                                       />
 

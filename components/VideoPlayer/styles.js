@@ -15,8 +15,19 @@ const styles = StyleSheet.create({
      
   
     
-    }
+    },
 
+
+    text:{    
+        width: 320,
+        height: 200,
+        // resizeMode:"contain"
+    },
+
+    text1:{
+        width: 320,
+      
+    }
   
 });
 

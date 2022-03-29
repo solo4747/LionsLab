@@ -7,7 +7,7 @@ import { Playback } from 'expo-av/build/AV';
 import { useRef, useState } from 'react';
 
 
-export default function VideoPlayer({lien, commentaire}) {
+export default function VideoPlayer({lien, commentaire, tag}) {
     
     // const { compil } = props;
     const video = useRef(null);
@@ -18,6 +18,7 @@ export default function VideoPlayer({lien, commentaire}) {
     return(
 
         <View style={{alignSelf: 'center',}}>
+        <Text style={[styles.text1, { textAlign:'center',alignSelf:'center', backgroundColor:'green', fontSize: 12, color: "#DFD8C8", textTransform: "uppercase" }]}>{tag}</Text>
         <Video
             ref={video}
             style={styles.video}
@@ -28,7 +29,7 @@ export default function VideoPlayer({lien, commentaire}) {
             resizeMode="contain"
             onPlaybackStatusUpdate={status => setStatus(() => status)} />
             
-            <Text style={[styles.text, { alignSelf:'center', fontSize: 12, color: "#DFD8C8", textTransform: "uppercase" }]}>{commentaire}</Text>
+            <Text style={[styles.text, {  alignSelf:'center', fontSize: 12, color: "#DFD8C8",  }]}>{commentaire}</Text>
             
             </View>
 

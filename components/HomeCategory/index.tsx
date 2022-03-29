@@ -63,7 +63,7 @@ interface HomeTeamInterface{
              || user.username === 'seconduser'
              || user.username === 'bapt' 
              || user.username === 'owo' 
-             || user.username === player.login && undefine)
+             || user.username === player.login)
           
           {
            
