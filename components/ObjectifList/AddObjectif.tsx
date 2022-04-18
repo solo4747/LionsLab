@@ -328,7 +328,9 @@ interface PlayerInterface{
 
                 <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
 
-                              <MaterialIcons  name='add' color={'white'} size={50} onPress={() => setModalOpen(true)}/> 
+
+                <MaterialIcons  name='add' color={'white'} size={50}/>
+                              {/* <MaterialIcons  name='add' color={'white'} size={50} onPress={() => setModalOpen(true)}/>  */}
                               <Text style={styles.legende}>Ta liste de challenges est vide. Rajoute toi des objectifs pour évoluer!!</Text>
                 </View>
 
@@ -606,7 +608,9 @@ interface PlayerInterface{
 
               <View style={{flex:1, justifyContent:'center', alignItems:'center'}}>
 
-                            <MaterialIcons  name='add' color={'white'} size={50} onPress={() => setModalOpen(true)}/> 
+              {/* <MaterialIcons  name='add' color={'white'} size={50} onPress={() => setModalOpen(true)}/>  */}
+
+                            <MaterialIcons  name='add' color={'white'} size={50}/> 
                             <Text style={styles.legende}>Ta liste est vide. Rajoute toi des objectifs pour évoluer!!</Text>
               </View>
 

@@ -30,14 +30,22 @@ export default function  MyTabs({plr}) {
     const fetchMedia = async () => {
 
   
-        const userData = await API.graphql(graphqlOperation(listMedia, {
-           filter: {
-               playerID: {eq: plr.id},
-           }
-       } ))
+      //   const userData = await API.graphql(graphqlOperation(listMedia, {
+      //      filter: {
+      //          playerID: {eq: plr.id},
+      //      }
+      //  } ))
 
        
-  
+       const userData = await API.graphql(graphqlOperation(listMedia, {
+        filter: { or: [
+     
+        
+          { or: [ { playerID: { eq: plr.id } }, { playerID: { eq: "general" } } ] },
+        ]
+
+        }
+    } ))
 
       // tri des vidéos et des photos à part.
       userData.data.listMedia.items.forEach(function(object) {
