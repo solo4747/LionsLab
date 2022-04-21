@@ -30,6 +30,7 @@ export type HomeParamList = {
   MediaScreen: undefined;
   SplashScreen: undefined;
   VoteScreen: undefined;
+  LineupScreen: undefined;
 };
 
 export type TabTwoParamList = {

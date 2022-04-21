@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import Chart from '../screens/Chart';
+import LineupScreen from '../screens/LineupScreen';
 import MediaScreen from '../screens/MediaScreen';
 import ModalScreen from '../screens/ModalScreen';
 import SplashScreen from '../screens/SplashScreen';
@@ -38,7 +39,7 @@ export default function BottomTabNavigator() {
                         2. ESPACE (TabTwoNavigator)
                         3. ...
                         4. ...
-                        5. ...
+                     
                 
                 */}
 
@@ -101,6 +102,14 @@ function TabOneNavigator() {
         component={SplashScreen}
         
         options={{   headerShown: false, title: 'ACCEUIL', headerTitleAlign:'center' }}
+        
+      />
+
+      <HomeStack.Screen
+        name="LineupScreen"                           
+        component={LineupScreen}
+        
+        options={{   headerShown: true, title: 'Composition', headerTitleAlign:'center' }}
         
       />
 

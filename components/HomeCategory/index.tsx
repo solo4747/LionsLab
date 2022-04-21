@@ -48,7 +48,34 @@ interface HomeTeamInterface{
         
         }, []);
     
+        const onTeamPress = (team) => {
+          let str = 'Tu ne peux pas accéder à la séléction pour le prochain match';
+     
+          if(user.username === 'firstuser' 
+             || user.username === 'stef' 
+             || user.username === 'seconduser'
+             || user.username === 'bapt' 
+             || user.username === 'owo' 
+             || user.username === player.login)
+          
+          {
+           
+                 {navigation.navigate('LineupScreen', team)}
+                 console.log(team)
+              
+          }
+
+          else{
+                  showMessage({
+                    message: str,
+                    type: "info",
+                    duration:2000,
+                    backgroundColor:'#D7BE69'
+                  });
+          }
         
+     
+        }
       
         const onPicturePress = (player: Player) => {
           let str = 'Tu ne peux pas accéder au profile de ';
@@ -87,8 +114,11 @@ interface HomeTeamInterface{
         <>
             {/* Title + flatlist qui affiche le poster des joueurs. */}
     
-          <Text style={styles.title}>{team.name}</Text>
-          
+          <Pressable onPress={() => onTeamPress(team)}> 
+              
+                  <Text style={styles.title}>{team.name}</Text>
+
+          </Pressable> 
         
           <FlatList                                              
               data={players}
@@ -151,9 +181,15 @@ interface HomeTeamInterface{
 
 
           title:{
-        
+            
+            fontStyle: 'italic',
+            paddingLeft:10,
             fontSize:20,
             fontWeight:'bold',
+            margin: 20,
+            backgroundColor:'#D7BE69',
+
+
         
           },
           text: {

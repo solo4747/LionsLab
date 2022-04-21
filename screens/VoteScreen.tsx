@@ -186,7 +186,7 @@ if(peutVoter)
     
     <RNPoll
       animationDuration={750}
-      totalVotes={100}
+      totalVotes={80}
       choices={choicess}
       PollContainer={RNAnimated}
       PollItemContainer={RNAnimated}
