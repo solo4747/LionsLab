@@ -143,3 +143,24 @@ type Media @model @auth
   poster: String
   tag : String
 }
+
+type Voters @model @auth
+(rules: 
+  [{ allow: private }]
+) 
+ {
+  id: ID! @primaryKey
+  name : String!
+  status: Boolean
+}
+
+type Candidats @model @auth
+(rules: 
+  [{ allow: private }]
+) 
+ {
+  id: ID! @primaryKey
+  name : String!
+  nombreDeVotes : Int!
+  poll: Int!
+}

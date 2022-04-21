@@ -18,6 +18,7 @@ export type BottomTabParamList = {
   Search: undefined;
   Downloads: undefined;
   Ranking: undefined;
+  Vote: undefined;
 };
 
 export type HomeParamList = {
@@ -28,12 +29,14 @@ export type HomeParamList = {
   TabFiveScreen: undefined;
   MediaScreen: undefined;
   SplashScreen: undefined;
+  VoteScreen: undefined;
 };
 
 export type TabTwoParamList = {
   TabTwoScreen: undefined;
   TabThreeScreen: undefined;
   TabFourScreen: undefined;
+
 };
 
 export type Episode = {

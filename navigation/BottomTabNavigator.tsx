@@ -1,11 +1,10 @@
-import { AntDesign, MaterialIcons, Entypo  } from '@expo/vector-icons';
+import { AntDesign, MaterialIcons, Entypo, MaterialCommunityIcons  } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
 import { API, graphqlOperation } from 'aws-amplify';
 import { setStatusBarBackgroundColor } from 'expo-status-bar';
 import * as React from 'react';
 import { useEffect, useState } from 'react';
-
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import Chart from '../screens/Chart';
@@ -18,6 +17,7 @@ import TabOneScreen from '../screens/TabOneScreen';
 import TabThreeScreen from '../screens/TabThreeScreen';
 
 import TabTwoScreen from '../screens/TabTwoScreen';
+import VoteScreen from '../screens/VoteScreen';
 import { listTeams } from '../src/graphql/queries';
 import { BottomTabParamList, HomeParamList, TabTwoParamList } from '../types';
 
@@ -61,8 +61,16 @@ export default function BottomTabNavigator() {
         options={{ 
           headerShown: false,
           tabBarIcon: ({ color }) => <Entypo name="trophy" size={24} color={color} />
-     
-          
+          ,
+        }}
+      />
+
+      <BottomTab.Screen
+        name="Vote"
+        component={TabThreeNavigator}
+        options={{ 
+          headerShown: false,
+          tabBarIcon: ({ color }) => <MaterialCommunityIcons name="poll" size={24} color={color} />
           ,
         }}
       />
@@ -137,6 +145,20 @@ function TabTwoNavigator() {
         name="TabTwoScreen"
         component={Chart}
         options={{ headerShown: true, title: 'CLASSEMENT', headerTitleAlign:'center' }}
+   
+        
+      />
+    </TabTwoStack.Navigator>
+  );
+}
+
+function TabThreeNavigator() {
+  return (
+    <TabTwoStack.Navigator>
+      <TabTwoStack.Screen
+        name="TabThreeScreen"
+        component={VoteScreen}
+        options={{ headerShown: true, title: 'AWARDS', headerTitleAlign:'center' }}
    
         
       />

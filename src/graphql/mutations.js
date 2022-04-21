@@ -895,3 +895,90 @@ export const deleteMedia = /* GraphQL */ `
     }
   }
 `;
+export const createVoters = /* GraphQL */ `
+  mutation CreateVoters(
+    $input: CreateVotersInput!
+    $condition: ModelVotersConditionInput
+  ) {
+    createVoters(input: $input, condition: $condition) {
+      id
+      name
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateVoters = /* GraphQL */ `
+  mutation UpdateVoters(
+    $input: UpdateVotersInput!
+    $condition: ModelVotersConditionInput
+  ) {
+    updateVoters(input: $input, condition: $condition) {
+      id
+      name
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteVoters = /* GraphQL */ `
+  mutation DeleteVoters(
+    $input: DeleteVotersInput!
+    $condition: ModelVotersConditionInput
+  ) {
+    deleteVoters(input: $input, condition: $condition) {
+      id
+      name
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const createCandidats = /* GraphQL */ `
+  mutation CreateCandidats(
+    $input: CreateCandidatsInput!
+    $condition: ModelCandidatsConditionInput
+  ) {
+    createCandidats(input: $input, condition: $condition) {
+      id
+      name
+      nombreDeVotes
+      poll
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const updateCandidats = /* GraphQL */ `
+  mutation UpdateCandidats(
+    $input: UpdateCandidatsInput!
+    $condition: ModelCandidatsConditionInput
+  ) {
+    updateCandidats(input: $input, condition: $condition) {
+      id
+      name
+      nombreDeVotes
+      poll
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const deleteCandidats = /* GraphQL */ `
+  mutation DeleteCandidats(
+    $input: DeleteCandidatsInput!
+    $condition: ModelCandidatsConditionInput
+  ) {
+    deleteCandidats(input: $input, condition: $condition) {
+      id
+      name
+      nombreDeVotes
+      poll
+      createdAt
+      updatedAt
+    }
+  }
+`;

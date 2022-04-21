@@ -5139,6 +5139,11 @@
     find-up "^5.0.0"
     js-yaml "^4.1.0"
 
+"@freakycoder/react-native-bounceable@^0.2.5":
+  version "0.2.5"
+  resolved "https://registry.yarnpkg.com/@freakycoder/react-native-bounceable/-/react-native-bounceable-0.2.5.tgz#ad61bdafbf68465e9c2145e99c09b500ae091f0e"
+  integrity sha512-J8WBOYxbm/um7SqXYneduZ08T5Kin9z+ixsS3wOLtpeNvKscuqmDEgsgefTYydeSIoI5dOfWmklnRRgu5i/8nA==
+
 "@gar/promisify@^1.0.1":
   version "1.1.2"
   resolved "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.2.tgz"
@@ -17646,6 +17651,11 @@ react-is@^16.13.0, react-is@^16.13.1, react-is@^16.7.0:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-native-animated-component@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-animated-component/-/react-native-animated-component-0.2.0.tgz#b0f94475060a37876c68f61835110ddd24439bb9"
+  integrity sha512-j4No+yTPEX9Dw6r6N4N0VjESeYlfVLRsLrx+WdOoepDIHjFksxCyOneYOegjvUfTFqjPpkK4d+hgI4V+o/vgMg==
+
 react-native-codegen@^0.0.6:
   version "0.0.6"
   resolved "https://registry.npmjs.org/react-native-codegen/-/react-native-codegen-0.0.6.tgz"
@@ -17712,6 +17722,11 @@ react-native-pager-view@^5.4.11:
   version "5.4.11"
   resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-5.4.11.tgz#677540293c7b4e0e022efb45727ef9b4efa35409"
   integrity sha512-4QlBL5W8yVjeYwrw89oCdABI7sDxIGapFQvIbukfB5mAj1Zn1IQPkBqROLblNFtQ8PbAeexXRgDT1ENWygiJ7A==
+
+react-native-poll@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-poll/-/react-native-poll-0.1.2.tgz#f3c774ff0c00ca765b525c38ea22623a98708635"
+  integrity sha512-NN85vICNLHxqN7hzSnK4bOiRYI/oL8bWWych+yjbXvhjUxhXiIkzRRYH38rId87d1NsuCpoNG8LdY33nG4c0zA==
 
 react-native-progress@^5.0.0:
   version "5.0.0"

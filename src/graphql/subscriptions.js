@@ -841,3 +841,72 @@ export const onDeleteMedia = /* GraphQL */ `
     }
   }
 `;
+export const onCreateVoters = /* GraphQL */ `
+  subscription OnCreateVoters {
+    onCreateVoters {
+      id
+      name
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateVoters = /* GraphQL */ `
+  subscription OnUpdateVoters {
+    onUpdateVoters {
+      id
+      name
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteVoters = /* GraphQL */ `
+  subscription OnDeleteVoters {
+    onDeleteVoters {
+      id
+      name
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateCandidats = /* GraphQL */ `
+  subscription OnCreateCandidats {
+    onCreateCandidats {
+      id
+      name
+      nombreDeVotes
+      poll
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateCandidats = /* GraphQL */ `
+  subscription OnUpdateCandidats {
+    onUpdateCandidats {
+      id
+      name
+      nombreDeVotes
+      poll
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteCandidats = /* GraphQL */ `
+  subscription OnDeleteCandidats {
+    onDeleteCandidats {
+      id
+      name
+      nombreDeVotes
+      poll
+      createdAt
+      updatedAt
+    }
+  }
+`;

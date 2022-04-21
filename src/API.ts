@@ -471,6 +471,76 @@ export type DeleteMediaInput = {
   id: string,
 };
 
+export type CreateVotersInput = {
+  id?: string | null,
+  name: string,
+  status?: boolean | null,
+};
+
+export type ModelVotersConditionInput = {
+  name?: ModelStringInput | null,
+  status?: ModelBooleanInput | null,
+  and?: Array< ModelVotersConditionInput | null > | null,
+  or?: Array< ModelVotersConditionInput | null > | null,
+  not?: ModelVotersConditionInput | null,
+};
+
+export type Voters = {
+  __typename: "Voters",
+  id: string,
+  name: string,
+  status?: boolean | null,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateVotersInput = {
+  id: string,
+  name?: string | null,
+  status?: boolean | null,
+};
+
+export type DeleteVotersInput = {
+  id: string,
+};
+
+export type CreateCandidatsInput = {
+  id?: string | null,
+  name: string,
+  nombreDeVotes: number,
+  poll: number,
+};
+
+export type ModelCandidatsConditionInput = {
+  name?: ModelStringInput | null,
+  nombreDeVotes?: ModelIntInput | null,
+  poll?: ModelIntInput | null,
+  and?: Array< ModelCandidatsConditionInput | null > | null,
+  or?: Array< ModelCandidatsConditionInput | null > | null,
+  not?: ModelCandidatsConditionInput | null,
+};
+
+export type Candidats = {
+  __typename: "Candidats",
+  id: string,
+  name: string,
+  nombreDeVotes: number,
+  poll: number,
+  createdAt: string,
+  updatedAt: string,
+};
+
+export type UpdateCandidatsInput = {
+  id: string,
+  name?: string | null,
+  nombreDeVotes?: number | null,
+  poll?: number | null,
+};
+
+export type DeleteCandidatsInput = {
+  id: string,
+};
+
 export type ModelTeamFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
@@ -579,6 +649,37 @@ export type ModelMediaFilterInput = {
   and?: Array< ModelMediaFilterInput | null > | null,
   or?: Array< ModelMediaFilterInput | null > | null,
   not?: ModelMediaFilterInput | null,
+};
+
+export type ModelVotersFilterInput = {
+  id?: ModelIDInput | null,
+  name?: ModelStringInput | null,
+  status?: ModelBooleanInput | null,
+  and?: Array< ModelVotersFilterInput | null > | null,
+  or?: Array< ModelVotersFilterInput | null > | null,
+  not?: ModelVotersFilterInput | null,
+};
+
+export type ModelVotersConnection = {
+  __typename: "ModelVotersConnection",
+  items:  Array<Voters | null >,
+  nextToken?: string | null,
+};
+
+export type ModelCandidatsFilterInput = {
+  id?: ModelIDInput | null,
+  name?: ModelStringInput | null,
+  nombreDeVotes?: ModelIntInput | null,
+  poll?: ModelIntInput | null,
+  and?: Array< ModelCandidatsFilterInput | null > | null,
+  or?: Array< ModelCandidatsFilterInput | null > | null,
+  not?: ModelCandidatsFilterInput | null,
+};
+
+export type ModelCandidatsConnection = {
+  __typename: "ModelCandidatsConnection",
+  items:  Array<Candidats | null >,
+  nextToken?: string | null,
 };
 
 export type CreateTeamMutationVariables = {
@@ -3647,6 +3748,105 @@ export type DeleteMediaMutation = {
   } | null,
 };
 
+export type CreateVotersMutationVariables = {
+  input: CreateVotersInput,
+  condition?: ModelVotersConditionInput | null,
+};
+
+export type CreateVotersMutation = {
+  createVoters?:  {
+    __typename: "Voters",
+    id: string,
+    name: string,
+    status?: boolean | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateVotersMutationVariables = {
+  input: UpdateVotersInput,
+  condition?: ModelVotersConditionInput | null,
+};
+
+export type UpdateVotersMutation = {
+  updateVoters?:  {
+    __typename: "Voters",
+    id: string,
+    name: string,
+    status?: boolean | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteVotersMutationVariables = {
+  input: DeleteVotersInput,
+  condition?: ModelVotersConditionInput | null,
+};
+
+export type DeleteVotersMutation = {
+  deleteVoters?:  {
+    __typename: "Voters",
+    id: string,
+    name: string,
+    status?: boolean | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type CreateCandidatsMutationVariables = {
+  input: CreateCandidatsInput,
+  condition?: ModelCandidatsConditionInput | null,
+};
+
+export type CreateCandidatsMutation = {
+  createCandidats?:  {
+    __typename: "Candidats",
+    id: string,
+    name: string,
+    nombreDeVotes: number,
+    poll: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type UpdateCandidatsMutationVariables = {
+  input: UpdateCandidatsInput,
+  condition?: ModelCandidatsConditionInput | null,
+};
+
+export type UpdateCandidatsMutation = {
+  updateCandidats?:  {
+    __typename: "Candidats",
+    id: string,
+    name: string,
+    nombreDeVotes: number,
+    poll: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type DeleteCandidatsMutationVariables = {
+  input: DeleteCandidatsInput,
+  condition?: ModelCandidatsConditionInput | null,
+};
+
+export type DeleteCandidatsMutation = {
+  deleteCandidats?:  {
+    __typename: "Candidats",
+    id: string,
+    name: string,
+    nombreDeVotes: number,
+    poll: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
 export type GetTeamQueryVariables = {
   id: string,
 };
@@ -5419,6 +5619,84 @@ export type ListMediaQuery = {
       description?: string | null,
       poster?: string | null,
       tag?: string | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetVotersQueryVariables = {
+  id: string,
+};
+
+export type GetVotersQuery = {
+  getVoters?:  {
+    __typename: "Voters",
+    id: string,
+    name: string,
+    status?: boolean | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListVotersQueryVariables = {
+  id?: string | null,
+  filter?: ModelVotersFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListVotersQuery = {
+  listVoters?:  {
+    __typename: "ModelVotersConnection",
+    items:  Array< {
+      __typename: "Voters",
+      id: string,
+      name: string,
+      status?: boolean | null,
+      createdAt: string,
+      updatedAt: string,
+    } | null >,
+    nextToken?: string | null,
+  } | null,
+};
+
+export type GetCandidatsQueryVariables = {
+  id: string,
+};
+
+export type GetCandidatsQuery = {
+  getCandidats?:  {
+    __typename: "Candidats",
+    id: string,
+    name: string,
+    nombreDeVotes: number,
+    poll: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type ListCandidatsQueryVariables = {
+  id?: string | null,
+  filter?: ModelCandidatsFilterInput | null,
+  limit?: number | null,
+  nextToken?: string | null,
+  sortDirection?: ModelSortDirection | null,
+};
+
+export type ListCandidatsQuery = {
+  listCandidats?:  {
+    __typename: "ModelCandidatsConnection",
+    items:  Array< {
+      __typename: "Candidats",
+      id: string,
+      name: string,
+      nombreDeVotes: number,
+      poll: number,
       createdAt: string,
       updatedAt: string,
     } | null >,
@@ -8397,6 +8675,75 @@ export type OnDeleteMediaSubscription = {
     description?: string | null,
     poster?: string | null,
     tag?: string | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateVotersSubscription = {
+  onCreateVoters?:  {
+    __typename: "Voters",
+    id: string,
+    name: string,
+    status?: boolean | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateVotersSubscription = {
+  onUpdateVoters?:  {
+    __typename: "Voters",
+    id: string,
+    name: string,
+    status?: boolean | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteVotersSubscription = {
+  onDeleteVoters?:  {
+    __typename: "Voters",
+    id: string,
+    name: string,
+    status?: boolean | null,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnCreateCandidatsSubscription = {
+  onCreateCandidats?:  {
+    __typename: "Candidats",
+    id: string,
+    name: string,
+    nombreDeVotes: number,
+    poll: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnUpdateCandidatsSubscription = {
+  onUpdateCandidats?:  {
+    __typename: "Candidats",
+    id: string,
+    name: string,
+    nombreDeVotes: number,
+    poll: number,
+    createdAt: string,
+    updatedAt: string,
+  } | null,
+};
+
+export type OnDeleteCandidatsSubscription = {
+  onDeleteCandidats?:  {
+    __typename: "Candidats",
+    id: string,
+    name: string,
+    nombreDeVotes: number,
+    poll: number,
     createdAt: string,
     updatedAt: string,
   } | null,

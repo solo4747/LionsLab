@@ -1636,3 +1636,79 @@ export const listMedia = /* GraphQL */ `
     }
   }
 `;
+export const getVoters = /* GraphQL */ `
+  query GetVoters($id: ID!) {
+    getVoters(id: $id) {
+      id
+      name
+      status
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listVoters = /* GraphQL */ `
+  query ListVoters(
+    $id: ID
+    $filter: ModelVotersFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listVoters(
+      id: $id
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        id
+        name
+        status
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
+export const getCandidats = /* GraphQL */ `
+  query GetCandidats($id: ID!) {
+    getCandidats(id: $id) {
+      id
+      name
+      nombreDeVotes
+      poll
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCandidats = /* GraphQL */ `
+  query ListCandidats(
+    $id: ID
+    $filter: ModelCandidatsFilterInput
+    $limit: Int
+    $nextToken: String
+    $sortDirection: ModelSortDirection
+  ) {
+    listCandidats(
+      id: $id
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      sortDirection: $sortDirection
+    ) {
+      items {
+        id
+        name
+        nombreDeVotes
+        poll
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;

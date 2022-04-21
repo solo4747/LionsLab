@@ -151,7 +151,7 @@ interface PlayerInterface{
                     if (isMounted) {setObj(objectifs.data.listObjectifs.items);};    // add conditional check
   
                     
-                    return () => { isMounted = false };;
+                    return () => { isMounted = false };
                     
                 };
             
